@@ -2,6 +2,7 @@
 #include "../cra_0624/similar.cpp"
 #include <vector>
 #include <string>
+#include <exception>
 using namespace std;
 
 class SimilarFixture : public ::testing::Test {
@@ -15,6 +16,7 @@ public:
 };
 
 TEST_F(SimilarFixture, Length) {
+	checkLengthSimilarity("", 0);
 	checkLengthSimilarity("aaaaa", 60);
 	checkLengthSimilarity("aaa", 36);
 	checkLengthSimilarity("aa", 0);
