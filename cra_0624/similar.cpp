@@ -7,7 +7,7 @@ class Similar {
 public:
 	Similar(const string& answers) : answers { answers } {};
 
-	int checkLengthSimilary(string words) {
+	int checkLengthSimilarity(string words) {
 		if (words.size() >= 2 * answers.size() ||
 			2 * words.size() <= answers.size()) {
 			return 0;
