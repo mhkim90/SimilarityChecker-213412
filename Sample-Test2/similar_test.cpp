@@ -6,10 +6,13 @@ using namespace std;
 
 class SimilarFixture : public ::testing::Test {
 public:
-	Similar app;
+	Similar app{ "abcde" };
 
 };
 
-TEST_F(SimilarFixture, Test) {
-	EXPECT_EQ(1, 1);
+TEST_F(SimilarFixture, Length) {
+	EXPECT_EQ(app.checkLengthSimilary("aaaaa"), 60);
+	EXPECT_EQ(app.checkLengthSimilary("aaa"), 36);
+	EXPECT_EQ(app.checkLengthSimilary("aa"), 0);
+	EXPECT_EQ(app.checkLengthSimilary("aaaaaaaaaa"), 0);
 }
