@@ -8,17 +8,17 @@ using namespace std;
 class SimilarFixture : public ::testing::Test {
 public:
 	void checkLengthSimilarity(string words, int expected) {
-		EXPECT_EQ(app.checkLengthSimilarity(words), expected);
+		EXPECT_EQ(app.getLengthSimilarityPoint(words), expected);
 	}
 
-	Similar app{ "abcde" };
+	Similar app{ "ABCDE" };
 
 };
 
 TEST_F(SimilarFixture, Length) {
 	checkLengthSimilarity("", 0);
-	checkLengthSimilarity("aaaaa", 60);
-	checkLengthSimilarity("aaa", 36);
-	checkLengthSimilarity("aa", 0);
-	checkLengthSimilarity("aaaaaaaaaa", 0);
+	checkLengthSimilarity("AAAAA", 60);
+	checkLengthSimilarity("AAA", 20);
+	checkLengthSimilarity("AA", 0);
+	checkLengthSimilarity("AAAAAAAAAA", 0);
 }
